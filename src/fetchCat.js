@@ -1,10 +1,9 @@
-const fetchCat = async ({ queryKey }) => {
-  const id = queryKey[1];
+const fetchCat = async (id) => {
   const apiUrl = `https://api.thecatapi.com/v1/images/${id}`;
 
   console.log("Fetching cat object:", apiUrl);
 
-  const apiRes = await fetch(apiUrl, { mode: "no-cors" });
+  const apiRes = await fetch(apiUrl);
 
   console.log("API response status:", apiRes.status);
   console.log("API response status text:", apiRes.statusText);

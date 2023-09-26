@@ -6,7 +6,7 @@ const fetchCat = async ({ queryKey }) => {
   );
 
   if (!apiRes.ok) {
-    throw new Error(`details/${id} fetch not ok`);
+    throw new Error(`cat/${id} fetch not ok`);
   }
 
   return apiRes.json();

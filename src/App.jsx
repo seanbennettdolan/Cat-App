@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Results  from "./Results";
-import Details from "./Details";
+import Breeds from "./Breeds";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,7 +22,7 @@ const App = () => {
  </header>
   <Routes>
     <Route path="/" element={<Results />} />
-    <Route path="/details/:id" element={<Details />} />
+    <Route path="/breeds" element={<Breeds />} />
   </Routes>
     </QueryClientProvider>
     </BrowserRouter>
