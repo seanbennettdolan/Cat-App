@@ -2,22 +2,28 @@ import { useQuery } from "@tanstack/react-query";
 import fetchBreeds from "./fetchBreeds";
 import fetchBreed from "./fetchBreed";
 import { useState, useEffect } from "react";
+import BreedModal from "./BreedModal";
 
 const Breeds = () => {
     const { data: breeds } = useQuery(["breeds"], fetchBreeds)
+    
     const [allBreeds, setAllBreeds] = useState([]); //Initialize an empty array for all breed objects
     const [breedIds, setBreedIds] = useState([]); //track breed id's
+    const [openModal, setOpenModal] = useState(false); //tracks if modal is open or closed
+    const [activeBreed, setActiveBreed] = useState(undefined); //tracks id of last clicked breed
+    
 
 
     useEffect(() => {
         if (breeds) {
            
             setAllBreeds(breeds);
-            setBreedIds(allBreeds.map((breed) => breed.id))
-    
-            
-        }
+            setBreedIds(breeds.map((breed) => 
+                breed.id));
+        
+    }
     }, [breeds]);
+
 
 if (breeds === undefined)
 return(
@@ -29,47 +35,42 @@ return(
 
 
 
-
-
 console.log("allBreeds", allBreeds);
-console.log("breedIds", breedIds)
-
-
-// const handleImages = () => {
-//     allBreeds.map((breed) => {
-//         const result = fetchBreed(breed.id);
-//         console.log(result);
-//     })
-    
-// }
-
-// handleImages();
+console.log("breedIds", breedIds);
 
 
 
 
+const handleModal = async (id) => {
+    setOpenModal(true);
+   const result = await fetchBreed(id);
+   setActiveBreed(result);
+};
 
-// const handleImages = async (id) => {
-//     const result = await fetchBreed(id);
-//     setBreedImages(result);
-//     };
-
-//     console.log(breedImages);
-
-    
+const handleCloseModal = () => {
+    setOpenModal(false)
+};
 
 return (
     <div className="breeds">
         
- {breedIds.map((breed, index) => (
+ {allBreeds.map((breed, index) => (
 
+/* <div key={index}> */
+/* {id}: {breedObj[id] ? breedObj[id].url : "Loading..."}
 
-    //    <img width={400} height={400} key={index} src={fetchBreed(breed).url} alt={`breed ${index}`}
-    //     />
-    <div key={index}>{breed.id}</div>
+         <img width={400} height={400} key={index} src={breedObj[id].url} alt={`breed ${index}`}
+         /> */
+        //  </div>
+      <div> 
+     <div key={index} onClick={() => handleModal(breed.id)}> {breed.name} </div>
+      </div>
+    // <div key={index}>{breed.id}</div>
    //pass breed ids into fetchBreed
     
 ))} 
+
+<BreedModal open={openModal} onClose={handleCloseModal} breed={activeBreed}/>
 </div>
 )
 }

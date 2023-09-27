@@ -46,7 +46,7 @@ const handleModal = async (id) => {
 
 const handleCloseModal = () => {
     setOpenModal(false)
-}
+};
 
   return (
   <div className="cats">

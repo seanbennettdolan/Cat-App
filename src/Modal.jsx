@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 const Modal = ({open, onClose, pet}) => {
@@ -10,12 +11,13 @@ if(pet) {
 <div id="modal">
     <div>
     {JSON.stringify(pet)};
-    <img src={pet.url} alt={""}></img>
+    <img width={400} height={400} src={pet.url} alt={""}></img>
     </div>
     <button onClick={(onClose)}>x</button>
     <select>
         <option>Add to Favorites</option>
     </select>
+    <Link to='/breeds'>Go to Breeds</Link>
     </div>
     )
 }
