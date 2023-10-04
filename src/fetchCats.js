@@ -1,4 +1,4 @@
-const fetchCat = async ({ queryKey }) => {
+const fetchCats = async ({ queryKey }) => {
   const id = queryKey[1];
 
   const apiRes = await fetch(
@@ -12,4 +12,4 @@ const fetchCat = async ({ queryKey }) => {
   return apiRes.json();
 };
 
-export default fetchCat;
+export default fetchCats;

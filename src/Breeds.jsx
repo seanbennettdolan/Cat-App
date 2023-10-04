@@ -55,19 +55,9 @@ return (
     <div className="breeds">
         
  {allBreeds.map((breed, index) => (
-
-/* <div key={index}> */
-/* {id}: {breedObj[id] ? breedObj[id].url : "Loading..."}
-
-         <img width={400} height={400} key={index} src={breedObj[id].url} alt={`breed ${index}`}
-         /> */
-        //  </div>
-      <div> 
-     <div key={index} onClick={() => handleModal(breed.id)}> {breed.name} </div>
+      <div key={index}> 
+     <div onClick={() => handleModal(breed.id)}> {breed.name} </div>
       </div>
-    // <div key={index}>{breed.id}</div>
-   //pass breed ids into fetchBreed
-    
 ))} 
 
 <BreedModal open={openModal} onClose={handleCloseModal} breed={activeBreed}/>
