@@ -11,15 +11,13 @@ const postJSON = async (data) => {
         
         body: JSON.stringify({"image_id": data.id}),
       });
-
-      const responseText = await response.text();
-      console.log("Response Text:", responseText);
   
       const result = await response.json();
       
-      console.log("Success:", result);
+      console.log("Response:", result);
     } catch (error) {
       console.error("Error:", error);
+      return null;
     }
   }
   

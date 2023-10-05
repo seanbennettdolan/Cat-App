@@ -3,6 +3,8 @@ import fetchCats from "./fetchCats";
 import { useState, useEffect } from "react";
 import Modal from "./Modal";
 import fetchCat from "./fetchCat";
+import { Link } from "react-router-dom";
+
 
 
 const Results = () => {
@@ -51,6 +53,9 @@ const handleCloseModal = () => {
   return (
   <div className="cats">
     <div>
+      <div>
+    <Link to="/favorites">Favorites</Link>
+    </div>
 
  {allImages.slice(0, loadedImages).map((pet, index) => (
                     <img width={400} height={400} key={index} src={pet.url} alt={`cat ${index}`}
