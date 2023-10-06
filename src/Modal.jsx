@@ -13,6 +13,7 @@ const handleOptionChange = (event) => {
 const handleAddToFavorites = () => {
     if (selectedOption === "Add to Favorites") {
         postJSON(pet);
+        onClose();
     }
 };
 
@@ -24,8 +25,11 @@ if(pet) {
     return (
 <div id="modal">
     <div>
-    {JSON.stringify(pet.breeds)}
+    {/* {JSON.stringify(pet.breeds)}  */}
     <img width={400} height={400} src={pet.url} alt={""}></img>
+     <h2>{pet.breeds[0].name}</h2>
+    <h3> Temperament: {pet.breeds[0].temperament}</h3>
+    <h3>{pet.breeds[0].description}</h3> 
     </div>
     <button onClick={(onClose)}>x</button>
     <select onChange={handleOptionChange}>

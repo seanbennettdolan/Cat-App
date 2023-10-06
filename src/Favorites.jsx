@@ -14,7 +14,7 @@ useEffect(() => {
     }
 }, [favorites]);
 
-
+refetch();
 
 
 if (favorites === undefined)

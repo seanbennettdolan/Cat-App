@@ -9,10 +9,11 @@ import { Link } from "react-router-dom";
 
 const Results = () => {
     const { data: pets, refetch } = useQuery(["cats"], fetchCats)
+    const [activePet, setActivePet] = useState(undefined); //tracks id of last clicked pet image
     const [loadedImages, setLoadedImages] = useState(10); // Initialize state to 10 images
     const [allImages, setAllImages] = useState([]); //Initialize an empty array for all images
     const [openModal, setOpenModal] = useState(false); //tracks if modal is open or closed
-    const [activePet, setActivePet] = useState(undefined); //tracks id of last clicked pet image
+    
 
     useEffect(() => {
         if (pets) {
@@ -42,7 +43,9 @@ console.log(pets);
 
 const handleModal = async (id) => {
     setOpenModal(true);
+
    const result = await fetchCat(id);
+
    setActivePet(result);
 };
 
@@ -63,6 +66,7 @@ const handleCloseModal = () => {
                 ))}
      
 <Modal open={openModal} onClose={handleCloseModal} pet={activePet}/>
+
           
 <button onClick={loadMoreImages}>Show More Cats!</button>
         
