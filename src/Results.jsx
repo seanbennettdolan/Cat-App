@@ -57,7 +57,7 @@ const handleCloseModal = () => {
   <div className="cats">
     <div>
       <div>
-    <Link to="/favorites">Favorites</Link>
+    {/* <Link to="/favorites">Favorites</Link> */}
     </div>
 
  {allImages.slice(0, loadedImages).map((pet, index) => (

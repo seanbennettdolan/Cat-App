@@ -21,10 +21,12 @@ const handleAddToFavorites = () => {
 if(pet) {
     console.log(pet);
 
-    if (!open) return null 
+    if (!open) return null;
+
+    if (pet.breeds) {
     return (
 <div id="modal">
-    <div>
+    <div className="modal-content">
     {/* {JSON.stringify(pet.breeds)}  */}
     <img width={400} height={400} src={pet.url} alt={""}></img>
      <h2>{pet.breeds[0].name}</h2>
@@ -40,7 +42,30 @@ if(pet) {
     <Link to='/breeds'>Go to Breeds</Link>
     </div>
     )
+
+} else {
+
+    return (
+        <div id="modal">
+    <div className="modal-content">
+    {/* {JSON.stringify(pet.breeds)}  */}
+    <img width={400} height={400} src={pet.url} alt={""}></img>
+    <div className="modal-text">
+    <button onClick={(onClose)}>x</button>
+    <select onChange={handleOptionChange}>
+        <option value="">Select an Option</option>
+        <option value="Add to Favorites">Add to Favorites</option>
+    </select>
+   <button onClick={handleAddToFavorites}>Submit</button>
+    <Link to='/breeds'>Go to Breeds</Link>
+    </div>
+    </div>
+    </div>
+    )
 }
+} else {
+    return null;
 }
+};
 
 export default Modal;

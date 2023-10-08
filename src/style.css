@@ -2,24 +2,101 @@
     box-sizing: border-box;
     color: #333;
   }
+
+  header a {
+    color: #333;
+    font-size: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding-bottom: 10px;
+    padding-right: 50px;
+  }
+  
+  header {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    /* width: 1100px; */
+    margin: 0 auto;
+    padding: 20px 20px 20px 20px;
+     
+  }
+
+  header a:hover {
+    color: purple;
+  }
   
   body {
-    background-color: #81a69b;
-    background-image: url(http://pets-images.dev-apis.com/pets/wallpaperB.jpg);
+    background-color: white;
     margin: 0;
+    padding-left: 27px;
+    padding-right: 27px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 
   .cats {
-    
     width: 80%;
     height: 100px;
     padding-top: 10px;
+display: inline; 
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+  }
+
+  .cats img {
+    margin: 4px;
+    border-radius: 5px;
+  }
+
+  .cats button {
+    display: block;
+    background-color: darkolivegreen;
+    color: white;
+    padding: 5px 25px;
+    font-size: 40px;
+    border: #333 1px solid;
+    border-radius: 5px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  .favorites {
+    /* width: 80%;
+    height: 100px;
+    padding-top: 10px;
+display: inline; 
+    flex-direction: column;
+    justify-content: space-between; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* border: 2px solid red; */
+  }
+
+  .favorite {
+    padding-bottom: 15px;
+  }
+
+   .favorite img {
+    border-radius: 5px;
+    margin: 4px;
+    padding-bottom: 5px;
+   }
+
+  .favorite button {
+    display: block;
+    background-color: darkolivegreen;
+    color: white;
+    padding: 5px 25px;
+    font-size: 18px;
+    border: #333 1px solid;
+    border-radius: 5px;
+    margin: 0 auto;
+    cursor: pointer;
   }
   
-  .search-params {
+  /* .search-params {
     width: 1100px;
     margin: 0 auto;
   }
@@ -42,9 +119,9 @@
     padding: 15px;
     float: left;
     margin-bottom: 25px;
-  }
+  } */
   
-  .details {
+  /* .details {
     width: 1100px;
     margin: 0 auto;
     padding: 15px;
@@ -53,8 +130,8 @@
     background: #faeff0;
     box-shadow: 0px 0px 12px #aaa, -0px -0px 12px #fff;
   }
-  
-  .pet {
+   */
+  /* .pet {
     width: 100%;
     height: 130px;
     display: block;
@@ -66,9 +143,9 @@
   .pet img {
     width: 100px;
     min-height: 100px;
-  }
+  } */
   
-  .info {
+  /* .info {
     float: left;
     width: 80%;
     height: 100px;
@@ -94,9 +171,9 @@
     overflow: hidden;
     margin: 0;
     text-overflow: ellipsis;
-  }
+  } */
   
-  header > a,
+  /* header > a,
   #root > div > h1 {
     display: inline-block;
     background-image: url(http://static.frontendmasters.com/resources/2019-05-02-complete-intro-react-v5/image-logo.png);
@@ -106,52 +183,36 @@
     overflow: hidden;
     text-indent: -9999px;
     margin: 20px 0;
-  }
+  } */
   
-  .pet h2 {
+  /* .pet h2 {
     white-space: nowrap;
     font-weight: normal;
     font-size: 20px;
     margin: 0;
     text-overflow: ellipsis;
-  }
+  } */
   
-  header a {
-    color: #333;
-    font-size: 3px;
-    text-decoration: none;
-    font-weight: bold;
-    display: block;
-    padding-bottom: 10px;
-  }
   
-  header {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    width: 1100px;
-    margin: 0 auto;
-    padding: 20px 0px 0px 0px;
-  }
   
-  .details p {
+  /* .details p {
     line-height: 1.5;
     padding: 0px 15px;
-  }
+  } */
   
-  .details h1 {
+  /* .details h1 {
     text-align: center;
     color: #333;
     font-size: 60px;
     margin: 5px 0px;
-  }
+  } */
   
-  .details h2 {
+  /* .details h2 {
     text-align: center;
     margin: 5px 0px 20px 0px;
-  }
+  } */
   
-  .carousel {
+  /* .carousel {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -166,68 +227,58 @@
   
   .carousel-smaller {
     width: 50%;
+  } */
+  
+  .cats img {
+    /* width: 100px;
+    height: 100px; */
+    /* border-radius: 100%;
+     display: inline; 
+      margin: 10px;
+    cursor: pointer; 
+    border: 2px solid #333; */
   }
   
-  .carousel-smaller > img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 15px;
-    cursor: pointer;
-    border: 2px solid #333;
-  }
-  
-  .carousel-smaller > img.active {
+  /* .carousel-smaller > img.active {
     border-color: #333;
     opacity: 0.6;
-  }
+  } */
   
-  .search-params label {
+  /* .search-params label {
     display: block;
     width: 60px;
-  }
+  } */
   
-  .search-params input,
+  /* .search-params input,
   .search-params select {
     margin-bottom: 30px;
     font-size: 18px;
     height: 30px;
     width: 325px;
-  }
+  } */
   
-  .search-params button,
   #modal button,
-  #modal a,
-  .details button {
-    background-color: #ad343e;
-    padding: 5px 25px;
+  #modal a{
+    background-color: #d42f3d;
+    padding: 5px 5px;
     color: white;
     font-size: 18px;
     border: #333 1px solid;
     border-radius: 5px;
     display: block;
     margin: 0 auto;
+    margin-right: 5px;
+    margin-left: 5px;
     cursor: pointer;
-  }
-  
-  #modal a {
-    display: inline-block;
-    margin-right: 15px;
     text-decoration: none;
   }
   
-  .search-params button:hover {
-    background-color: #122622;
-  }
+  /* #modal a {
+    display: inline-block;
+    margin-right: 15px;
+    text-decoration: none;
+  } */
   
-  .search-params button:active {
-    background-color: #5f1d22;
-  }
-  
-  .search-params button:focus {
-    border: 1px solid cornflowerblue;
-  }
   
   #modal {
     background-color: rgba(0, 0, 0, 0.9);
@@ -240,6 +291,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-text {
+    display: flex;
+    flex-direction: row;
+     margin-top: 10px;
   }
   
   #modal:empty {
@@ -254,122 +317,27 @@
     border-radius: 30px;
     background: #faeff0;
   }
-  
-  #modal .buttons button {
-    display: inline-block;
-    margin-right: 15px;
-  }
-  
-  @media only screen and (max-width: 1129px) {
-    header {
-      display: flex;
-      align-content: center;
-      justify-content: center;
-      width: 95%;
-      margin: 0 auto;
-      padding: 20px 0px 0px 0px;
-    }
-  
-    .search-params {
-      width: 95%;
-    }
-  
-    .search-params form {
-      margin-bottom: 20px;
-    }
-  
-    .search {
-      width: 55%;
-      padding: 15px;
-      border-radius: 9px;
-      float: left;
-      margin-bottom: 25px;
-    }
-  
-    .details {
-      width: 95%;
-      margin: 0 auto;
-      padding: 15px;
-      border-radius: 9px;
-      margin-bottom: 25px;
-    }
-  
-    .info {
-      width: 65%;
-    }
-  
-    .info h1 {
-      width: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  
-    .info h2 {
-      width: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  }
-  
-  @media only screen and (max-width: 945px) {
-    .search-params {
-      width: 95%;
-    }
-  
-    .search {
-      width: 100%;
-    }
-  }
+
+
+
   
   @media only screen and (max-width: 600px) {
-    .pet {
-      height: 200px;
+
+    body {
+      padding-left: 45px;
     }
-  
-    .info {
-      width: 100%;
-      text-align: center;
-    }
-  
-    .image-container {
+
+    header {
+      display: flex;
+      align-content: left;
+      justify-content: left;
+      width: 1100px;
       margin: 0 auto;
-      float: none;
+      padding: 20px 20px 20px 45px;
     }
-    .carousel-smaller > img {
-      width: 60px;
-      height: 60px;
+
+    header a{
+font-size: large;
     }
-  }
   
-  .loading-pane {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    padding: 15px;
-  }
-  
-  form .pet {
-    float: unset;
-    margin: 0 auto;
-  }
-  
-  .loader {
-    font-size: 100px;
-    animation: spin 1s linear infinite;
-  }
-  
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .mini.loading-pane {
-    height: 34px;
-  }
-  
-  .mini .loader {
-    font-size: 34px;
   }

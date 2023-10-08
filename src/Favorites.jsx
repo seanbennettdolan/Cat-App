@@ -44,11 +44,15 @@ return (
 
 
   {loadedFavorites.map((favorite, index)=> (
-<div key={index}>
+<div className="favorite" key={index}>
 
 {console.log(favorite)}
+
  <img width={400} height={400} src={favorite.image.url} alt={""}></img> 
+
+
  <button onClick={()=>deleteFunction(favorite.id)}>Delete from Favorites</button>
+
 
 </div>
     ) 
