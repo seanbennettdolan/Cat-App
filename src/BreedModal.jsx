@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const BreedModal = ({open, onClose, breed}) => {
 if(breed) {
-    console.log(breed);
+    console.log("breed", breed);
 
     if (!open) return null 
     return (
