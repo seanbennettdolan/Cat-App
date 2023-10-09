@@ -1,6 +1,6 @@
-import getJSON from "./getFavorite";
+import getJSON from "../API/getFavorite";
 import { useQuery } from "@tanstack/react-query";
-import deleteJSON from "./deleteFavorite";
+import deleteJSON from "../API/deleteFavorite";
 import { useEffect, useState } from "react";
 
 

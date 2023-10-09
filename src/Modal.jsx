@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
-import postJSON from "./postFavorite";
+import postJSON from "../API/postFavorite";
 
 
 const Modal = ({open, onClose, pet}) => {

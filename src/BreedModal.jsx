@@ -11,7 +11,7 @@ if(breed) {
 <div id="modal">
     <div className="modal-content">
     {/* {JSON.stringify(breed)}; */}
-    <img width={400} height={400} src={breed[0].url} alt={""}></img>
+    <img onClick={(onClose)} width={400} height={400} src={breed[0].url} alt={""}></img>
    <div className="modal-text">
     <button onClick={(onClose)}>x</button>
     </div>

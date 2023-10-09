@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import fetchCats from "./fetchCats";
+import fetchCats from "../API/fetchCats";
 import { useState, useEffect } from "react";
 import Modal from "./Modal";
-import fetchCat from "./fetchCat";
+import fetchCat from "../API/fetchCat";
 import { Link } from "react-router-dom";
 
 

@@ -21,20 +21,4 @@ const postJSON = async (data) => {
     }
   }
   
-  export default postJSON;
-
-// var rawBody = JSON.stringify({ 
-//     "image_id": "id-of-image-to-favourite",
-//     // "sub_id":"user-123"
-//      });
-    
-    
-//     const newFavourite = await fetch(
-//     "https://api.thecatapi.com/v1/favourites", 
-//         {
-//             method: 'POST',
-//             headers: { 'x-api-key': 'live_nAzGjBlyfZNJaRwQjUg7Lzc9OGCAdz2nVoWkPmeFqup5jNjUI6EpQrDui6VTOWos'} ,
-//             body: rawBody
-//         }
-//     )
-//          export default newFavourite;    
+  export default postJSON;  

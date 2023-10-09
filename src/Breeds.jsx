@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import fetchBreeds from "./fetchBreeds";
-import fetchBreed from "./fetchBreed";
+import fetchBreeds from "../API/fetchBreeds";
+import fetchBreed from "../API/fetchBreed";
 import { useState, useEffect } from "react";
 import BreedModal from "./BreedModal";
 
